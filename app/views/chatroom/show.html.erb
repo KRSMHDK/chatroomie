@@ -1,0 +1,37 @@
+<div class="ui centered grid">
+  <div class="sixteen wide mobile ten wide tablet six wide computer column">
+    <div class="ui raised very padded text container segment">
+      <h2 class="ui center aligned icon header">
+        <i class="circular chat icon"></i>
+        Chatroom
+      </h2>
+      <div id="messages" class="ui comments">
+        <%= render partial: "messages/message", collection: @messages %>
+      </div>
+      <%= form_with url: messages_path, method: :post, remote: true, class: "ui reply form" do |form| %>
+        <% if session[:user] %>
+          <%= turbo_stream_from "users" %>
+          <div id="users">
+            <ul class="list-group">
+              <%= render @users %>
+            </ul>
+          </div>
+          <%= session[:user]["name"] %>
+          <%= form.text_field :content, placeholder: "Enter your message here...", class: "field" %>
+          <%= form.hidden_field :user_id, value: session[:user]["id"] %>
+          <%= form.hidden_field :room_id, value: @room.id %>
+          <%= form.submit "Send", class: "ui primary button" %>
+        <% else %>
+          <div class="ui message">
+            Please enter your name to start chatting:
+          </div>
+          <div class="ui fluid action input">
+            <%= form.text_field :user_name, placeholder: "Enter your name here...", class: "field" %>
+            <%= form.submit "Join chat", class: "ui primary button" %>
+          </div>
+        <% end %>
+      <% end %>
+      <%= action_cable_meta_tag %>
+    </div>
+  </div>
+</div>
