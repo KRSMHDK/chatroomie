@@ -1,21 +1,30 @@
-<div id="messages">
-  <%= render partial: "messages/message", collection: @messages %>
-</div>
-<%= form_with url: users_path do %>
-  <div class="column">
-    <ul>
-      <% @room.each do |room| %>
-        <li>
-          <%= radio_button_tag 'room', room.id %>
-          <%= label_tag "room_#{room.id}", room.name%>
-        </li>
-      <% end %>
-    </ul>
+<body class="d-flex flex-column align-items-center">
+  <%= render partial: 'title' %>
+  <div class="container w-25 p-4">
+    <%= image_tag 'home_art.png', alt: 'My Image', class: 'img-fluid rounded' %>
+
+    <%= form_with url: users_path do |f| %>
+      <div class="row justify-content-center">
+        <div class= "pt-4">
+          <ul>
+              <p><b>Choose your favorite room:</b></p>
+            <% @room.each do |room| %>
+              <li class= "p-1">
+                <%= f.radio_button :room, room.id %>
+                <%= f.label "room_#{room.id}", room.name.capitalize %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+        <div class="row">
+          <div class="form-group m-2">
+            <%= f.text_field :name, class: 'form-control', placeholder: 'Enter your name here...' %>
+            <%= f.submit "Let Me In!", class: "form-control let_me_in_btn" %>
+          </div>
+
+        </div>
+      </div>
+      <%= action_cable_meta_tag %>
+    <% end %>
   </div>
-  <div class="column">
-    <%= label_tag 'Name' %>
-    <%= text_field_tag "user[name]", nil, placeholder: "Enter your name here..." %>
-    <%= submit_tag "Send", class: "ui primary button" %>
-  </div>
-<% end %>
-<%= action_cable_meta_tag %>
+</body>

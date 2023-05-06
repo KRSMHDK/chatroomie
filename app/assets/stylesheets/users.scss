@@ -1,0 +1,50 @@
+$red-primary: #E85A4F;
+$green-secondary: #86C232;
+$primary-background: #EAE7DC;
+$gray-background: #8E8D8A;
+
+#title {
+  color: $red-primary;
+  font-size: 24px;
+  font-family: 'Oswald', sans-serif;
+  font-weight: bold;
+}
+
+#title2 {
+  color: $gray-background;
+  font-size: 14px;
+  font-family: 'Oswald', sans-serif;
+  font-weight: bold;
+}
+
+body {
+  background-color: $primary-background !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  background-color: $gray-background !important;
+  max-width: 300px;
+  border: 1px;
+  border-radius: 30px;
+}
+
+.let_me_in_btn {
+  background-color: $red-primary !important;
+  color: white !important;
+  border: none !important;
+  padding: 10px 20px;
+  border-radius: 5px;
+
+  // Add hover styles for the button
+  &:hover {
+    background-color: darken($red-primary, 10%) !important;
+  }
+}
+
+ul {
+  list-style: none;
+}
