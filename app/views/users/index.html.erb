@@ -8,9 +8,9 @@
       <div class= "pt-4">
         <ul>
           <p><b>Choose your favorite room:</b></p>
-          <% @room.each do |room| %>
+          <% @room.each_with_index do |room, index| %>
             <li class= "p-1">
-              <%= f.radio_button :room, room.id %>
+              <%= f.radio_button :room, room.id, checked: index == 0 ? true : false %>
               <%= f.label "room_#{room.id}", room.name.capitalize %>
             </li>
           <% end %>
@@ -18,7 +18,7 @@
       </div>
       <div class="row">
         <div class="form-group m-2">
-          <%= f.text_field :name, class: 'form-control', placeholder: 'Enter your name here...' %>
+          <%= f.text_field :name, class: 'form-control', placeholder: 'Enter your name here...', required: true %>
           <%= f.submit "Let Me In!", class: "form-control let_me_in_btn" %>
         </div>
       </div>
