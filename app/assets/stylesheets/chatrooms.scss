@@ -6,9 +6,22 @@
   height: 500px;
   overflow-y: scroll;
   border: 1px solid #ccc;
-  background-color: #fff;
+  background-color: #36393f;
   padding: 20px;
 }
 .chat-message {
   margin-top: 10px;
+}
+
+.message_content{
+  color: white;
+}
+
+.timestamp{
+  font-weight: bold;
+  color: #b9bbbe;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-right: 10px;
 }
