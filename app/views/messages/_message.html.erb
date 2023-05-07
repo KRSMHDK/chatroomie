@@ -1,3 +1,18 @@
 <div class="message">
-  <p><%= image_tag("https://api.dicebear.com/6.x/thumbs/svg?seed=#{message.user.name}", size: "40") %> <%= message.user.name %>:<%= message.content %></p>
+  <div class="row no-gutters">
+    <div class="col-sm-1 h-25">
+      <%= image_tag("https://api.dicebear.com/6.x/thumbs/svg?seed=#{message.user.name}", size: "50", class: "rounded-circle" ) %>
+    </div>
+    <div class="col-sm-11 p-0">
+      <div class="row no-gutters">
+        <div >
+          <span style="color: <%= string_to_color(message.user.name) %>"> <%= message.user.name %></span>
+          <span class="timestamp"><%= message.created_at.strftime("%Y-%m-%d") == Date.today.strftime("%Y-%m-%d") ? "Today at " + message.created_at.strftime("%I:%M %p") : message.created_at.strftime("%B %d, %Y at %I:%M %p") %></span>
+        </div>
+        <div >
+          <p class = "message_content"><%= message.content %></p>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
