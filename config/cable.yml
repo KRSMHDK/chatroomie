@@ -7,5 +7,5 @@ test:
 
 production:
   adapter: redis
-  url: <%= "redis://default:cLv87gpyWqhQRW1yzTbB@containers-us-west-80.railway.app:8077") { "redis://localhost:6379/1" } %>
+  url: redis://default:cLv87gpyWqhQRW1yzTbB@containers-us-west-80.railway.app:8077
   channel_prefix: ruby_rails_postgres_production
