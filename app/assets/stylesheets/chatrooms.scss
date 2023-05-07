@@ -1,20 +1,18 @@
-.chat-container {
-  margin-top: 50px;
-  margin-bottom: 50px;
-}
+
 .chatbox {
-  height: 500px;
+  height: 700px;
   overflow-y: scroll;
-  border: 1px solid #ccc;
-  background-color: #36393f;
-  padding: 20px;
-}
-.chat-message {
-  margin-top: 10px;
+  background-color: #20232B;
 }
 
 .message_content{
-  color: white;
+  color: black;
+  background-color: #DCF8C6;
+  border-radius: 10px;
+  display: inline-block;
+  max-width: 60%;
+  margin-bottom: 5px;
+  padding: 10px;
 }
 
 .timestamp{
@@ -24,4 +22,12 @@
   text-transform: uppercase;
   letter-spacing: 0.1em;
   margin-right: 10px;
+}
+
+.room_name {
+  border-bottom: 1px solid #dbe0e9;
+  text-align: center;
+  font-size: 24px;
+  padding-bottom: 5px;
+  padding-top: 5px;
 }

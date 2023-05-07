@@ -1,7 +1,7 @@
 $red-primary: #E85A4F;
 $green-secondary: #86C232;
-$primary-background: #EAE7DC;
-$gray-background: #8E8D8A;
+$primary-background: #1D1E24;
+$gray-background: #262626;
 
 #title {
   color: $red-primary;
@@ -11,7 +11,6 @@ $gray-background: #8E8D8A;
 }
 
 #title2 {
-  color: $gray-background;
   font-size: 14px;
   font-family: 'Oswald', sans-serif;
   font-weight: bold;
@@ -26,7 +25,7 @@ body {
 }
 
 .container {
-  background-color: $gray-background !important;
+  background-color: #20232B !important;
   max-width: 300px;
   border: 1px;
   border-radius: 30px;
