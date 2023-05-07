@@ -5,7 +5,7 @@ $gray-background: #8E8D8A;
 
 #title {
   color: $red-primary;
-  font-size: 24px;
+  font-size: 35px;
   font-family: 'Oswald', sans-serif;
   font-weight: bold;
 }
@@ -30,6 +30,7 @@ body {
   max-width: 300px;
   border: 1px;
   border-radius: 30px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .let_me_in_btn {
