@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user =  User.find_or_create_by(name: params[:name])
+    user = User.find_or_create_by(name: params[:name])
 
     if user
       log_in(user, params[:room])
